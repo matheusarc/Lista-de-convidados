@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de convidados</title>
+</head>
+<body>
+    <div>
+        <ul id="lista"></ul>
+        <input type="text" id="nome_convidado">
+        <button onclick="inserir()">Inserir convidado</button>
+        <button onclick="remover()">Remover convidado</button>
+    </div>
+
+    <script>
+        let convidados = [];
+        let ul = document.getElementById("lista")
+        
+        function inserir(){
+            let n_convidado = document.getElementById("nome_convidado").value;
+            convidados.push(n_convidado);
+
+            document.getElementById("nome_convidado").value;
+            desenha_lista();
+        }
+
+        function remover(){
+            convidados.pop();
+            desenha_lista();
+        }
+
+        function desenha_lista(){
+            ul.innerHTML = "";
+            for (let x = 0; x < convidados.length; x++){
+                ul.innerHTML += `<li>${convidados[x]}</li>` 
+            }
+        }
+
+        </script>
+</body>
+</html>
+<!-- 3 HORAS PRA FAZER ISSO :_( KKKKK -->
